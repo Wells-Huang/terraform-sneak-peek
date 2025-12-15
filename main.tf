@@ -1,19 +1,19 @@
 provider "aws" {
-  region = "ap-northeast-1"
+  region = var.aws_region
 }
 
 resource "aws_key_pair" "deployer_key" {
-  key_name   = "ec2-key-from-id-rsa"
-  public_key = file("~/.ssh/id_rsa.pub")
+  key_name   = var.key_name
+  public_key = file(var.public_key_path)
 }
 
 resource "aws_instance" "public_ec2" {
-  ami           = "ami-0aec5ae807cea9ce0"
-  instance_type = "t3.micro"
+  ami           = var.ami_id
+  instance_type = var.instance_type
   key_name      = aws_key_pair.deployer_key.key_name
-  security_groups = ["sg-02b2aac418b53e07e"]
-  subnet_id = "subnet-0b0313ed15fb24c03" 
+  security_groups = [var.security_group_id]
+  subnet_id = var.subnet_id
   tags = {
-    Name = "public ec2"
+    Name = var.instance_name
   }
 }
