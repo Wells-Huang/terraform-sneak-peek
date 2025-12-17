@@ -8,4 +8,5 @@
 4. 按output.tf的指示輸出public ip及SSH command
 
 **架構圖**
+
 ![Architecture Diagram](docs/diagram.drawio.png)
