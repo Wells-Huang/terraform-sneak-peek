@@ -1,68 +1,59 @@
-<mxfile host="app.diagrams.net">
-  <diagram name="AWS Terraform Architecture">
-    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.2.7">
+  <diagram name="AWS Terraform Architecture" id="0">
+    <mxGraphModel dx="1213" dy="670" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
-        <mxCell id="0"/>
-        <mxCell id="1" parent="0"/>
-
-        <!-- User -->
-        <mxCell id="user" value="User / Developer"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf"
-          vertex="1" parent="1">
-          <mxGeometry x="40" y="40" width="160" height="60" as="geometry"/>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="user" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" value="User / Developer" vertex="1">
+          <mxGeometry height="60" width="160" x="330" y="30" as="geometry" />
         </mxCell>
-
-        <!-- Terraform -->
-        <mxCell id="terraform" value="Terraform"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6"
-          vertex="1" parent="1">
-          <mxGeometry x="260" y="40" width="160" height="60" as="geometry"/>
+        <mxCell id="terraform" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" value="Terraform" vertex="1">
+          <mxGeometry height="60" width="160" x="500" y="190" as="geometry" />
         </mxCell>
-
-        <!-- AWS -->
-        <mxCell id="aws" value="AWS Cloud"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656"
-          vertex="1" parent="1">
-          <mxGeometry x="200" y="140" width="420" height="260" as="geometry"/>
+        <mxCell id="aws" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" value="AWS Cloud" vertex="1">
+          <mxGeometry height="260" width="420" x="200" y="340" as="geometry" />
         </mxCell>
-
-        <!-- VPC -->
-        <mxCell id="vpc" value="VPC"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450"
-          vertex="1" parent="aws">
-          <mxGeometry x="20" y="40" width="380" height="200" as="geometry"/>
+        <mxCell id="vpc" parent="aws" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450" value="VPC" vertex="1">
+          <mxGeometry height="200" width="380" x="20" y="40" as="geometry" />
         </mxCell>
-
-        <!-- Public Subnet -->
-        <mxCell id="subnet" value="Public Subnet"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366"
-          vertex="1" parent="vpc">
-          <mxGeometry x="40" y="50" width="300" height="120" as="geometry"/>
+        <mxCell id="subnet" parent="vpc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="Public Subnet" vertex="1">
+          <mxGeometry height="120" width="300" x="40" y="50" as="geometry" />
         </mxCell>
-
-        <!-- EC2 -->
-        <mxCell id="ec2" value="EC2 Instance"
-          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000"
-          vertex="1" parent="subnet">
-          <mxGeometry x="80" y="40" width="140" height="60" as="geometry"/>
+        <mxCell id="ec2" parent="subnet" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000" value="EC2 Instance&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="140" x="80" y="40" as="geometry" />
         </mxCell>
-
-        <!-- Edges -->
-        <mxCell id="e1" style="endArrow=block;html=1;" edge="1" parent="1"
-          source="user" target="terraform">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="dz59dAmm-Kej_zFCZBRU-2" parent="subnet" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ec2;" value="" vertex="1">
+          <mxGeometry height="40" width="40" x="180" y="50" as="geometry" />
         </mxCell>
-
-        <mxCell id="e2" style="endArrow=block;html=1;" edge="1" parent="1"
-          source="terraform" target="ec2">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="dz59dAmm-Kej_zFCZBRU-4" parent="subnet" style="whiteSpace=wrap;html=1;strokeColor=#FFFFFF;" value="Public Subnet" vertex="1">
+          <mxGeometry height="20" width="80" x="52.39" y="-1.38" as="geometry" />
         </mxCell>
-
-        <mxCell id="e3" value="SSH" style="dashed=1;endArrow=block;html=1;"
-          edge="1" parent="1" source="user" target="ec2">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="dz59dAmm-Kej_zFCZBRU-5" parent="subnet" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/networking/Subnet.svg;" value="" vertex="1">
+          <mxGeometry height="31.38" width="52.39" y="-1.38" as="geometry" />
         </mxCell>
-
+        <mxCell id="dz59dAmm-Kej_zFCZBRU-6" parent="vpc" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.vpc;" value="" vertex="1">
+          <mxGeometry height="40" width="40" x="10" as="geometry" />
+        </mxCell>
+        <mxCell id="dz59dAmm-Kej_zFCZBRU-7" parent="vpc" style="whiteSpace=wrap;html=1;strokeColor=#FFFFFF;" value="VPC" vertex="1">
+          <mxGeometry height="20" width="40" x="50" as="geometry" />
+        </mxCell>
+        <mxCell id="dz59dAmm-Kej_zFCZBRU-3" parent="aws" style="whiteSpace=wrap;html=1;strokeColor=#FFFFFF;" value="AWS cloud" vertex="1">
+          <mxGeometry height="20" width="80" x="20" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="user" style="endArrow=block;html=1;" target="terraform">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="terraform" style="endArrow=block;html=1;" target="ec2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dz59dAmm-Kej_zFCZBRU-1" connectable="0" parent="e2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Terraform commands" vertex="1">
+          <mxGeometry relative="1" x="-0.5784" y="-1" as="geometry">
+            <mxPoint x="-1" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="user" style="dashed=1;endArrow=block;html=1;" target="ec2" value="SSH">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
