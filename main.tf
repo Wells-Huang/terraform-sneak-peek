@@ -13,6 +13,7 @@ resource "aws_instance" "public_ec2" {
   key_name      = aws_key_pair.deployer_key.key_name
   security_groups = ["sg-02b2aac418b53e07e"]
   subnet_id = var.subnet_id
+  associate_public_ip_address = true
   tags = {
     Name = var.instance_name
   }
