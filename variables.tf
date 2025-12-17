@@ -22,12 +22,6 @@ variable "subnet_id" {
   default     = "subnet-0b0313ed15fb24c03"
 }
 
-variable "security_group_id" {
-  description = "The ID of the security group to associate with the EC2 instance."
-  type        = string
-  default     = "sg-02b2aac418b53e07e"
-}
-
 variable "key_name" {
   description = "The name for the AWS Key Pair."
   type        = string
